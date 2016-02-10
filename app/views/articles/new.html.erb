@@ -1,0 +1,40 @@
+<!-- 
+
+<h1>This is article!!</h1>
+
+
+<%= form_for :article, url: articles_path do |f| %>
+<% if @article.errors.any? %>
+<div id="explaination">
+	<h3>
+		<%=  pluralize(@article.errors.count, "errors")%>
+		this is prohabited
+	</h3>
+	<ul>
+		<% @article.errors.full_messages.each do |msg|%>
+		<li> <%= msg %></li>
+	</ul>
+    <% end%>
+</div>
+<% end%>
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+ 
+  <p>
+    <%= f.label :text %><br>
+    <%= f.text_area :text %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+ 
+<% end %>
+
+ <%= link_to 'Back', articles_path%> -->
+
+ <h3>New Article</h3>
+ <%= render 'form'%>
+ <%= link_to 'Back', articles_path %>
